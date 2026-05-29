@@ -1,0 +1,18 @@
+{
+  "fiscalYear": "FY26-27",
+  "adoptionDate": "",
+  "keyChange": "See Appendix C of the FY2026-2027 Recommended Budget for the full consolidated fee schedule",
+  "categories": [
+    {
+      "name": "General Services",
+      "description": "See the full budget document, Appendix C, for the complete fee schedule",
+      "fees": [
+        {
+          "item": "See Appendix C in budget document",
+          "amount": 0,
+          "unit": "varies"
+        }
+      ]
+    }
+  ]
+}

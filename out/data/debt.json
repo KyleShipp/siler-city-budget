@@ -1,0 +1,16 @@
+{
+  "loans": [],
+  "totalDebtService": {
+    "FY25-26": {
+      "principal": 0,
+      "interest": 0,
+      "total": 23988100
+    },
+    "FY26-27": {
+      "principal": 0,
+      "interest": 0,
+      "total": 22819427
+    }
+  },
+  "totalOutstandingDebt": 0
+}
