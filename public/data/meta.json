@@ -21,7 +21,7 @@
     {
       "key": "FY26-27",
       "label": "FY 2026-2027",
-      "type": "recommended",
+      "type": "adopted",
       "startDate": "2026-07-01",
       "endDate": "2027-06-30"
     }
@@ -83,9 +83,10 @@
   },
   "sources": [
     {
-      "title": "FY2026-2027 Recommended Annual Operating Budget",
-      "date": "2026-05-01",
-      "type": "recommended"
+      "title": "FY2026-2027 Approved Annual Operating Budget",
+      "date": "2026-06-15",
+      "type": "adopted",
+      "url": "https://county-chatham-nc-cleardoc.cleargov.com/26276"
     }
   ]
 }

@@ -44,6 +44,7 @@ export interface MetaData {
     title: string;
     date: string;
     type: string;
+    url?: string;
   }>;
 }
 

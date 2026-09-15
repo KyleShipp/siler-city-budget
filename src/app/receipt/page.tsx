@@ -14,7 +14,7 @@ import {
 } from 'recharts';
 import { getMeta, getSummary, getBudget } from '@/lib/data';
 import { formatCurrency } from '@/lib/format';
-import { calculateTaxBill, allocateTaxReceipt, allocateTaxReceiptWeighted } from '@/lib/calculations';
+import { calculateTaxBill, allocateTaxReceipt } from '@/lib/calculations';
 import { searchParcels, type ParcelResult } from '@/lib/parcel';
 
 const meta = getMeta();
@@ -49,7 +49,6 @@ export default function ReceiptPage() {
   const [searching, setSearching] = useState(false);
   const [searched, setSearched] = useState(!!saved.parcel);
   const [error, setError] = useState('');
-  const [receiptMode, setReceiptMode] = useState<'weighted' | 'proportional'>('weighted');
 
   useEffect(() => {
     try {
@@ -100,24 +99,8 @@ export default function ReceiptPage() {
     budget.departments.find((d) => d.id === 'debt-service')?.amounts[fy]?.total ?? 0;
   const totalBudget = serviceTotal + debtTotal;
 
-  // Dedicated revenue data
-  const dedicatedRevenue: Record<string, { total: number }> =
-    (budget as any).dedicatedRevenue?.[fy] ?? {};
-
-  // Proportional mode
-  const proportionalAllocations = allocateTaxReceipt(countyTax, serviceDepts, totalBudget);
-  const proportionalDebt = Math.round(countyTax * (debtTotal / totalBudget) * 100) / 100;
-
-  // Weighted mode
-  const allDeptsWithDebt = [...serviceDepts, { id: 'debt-service', name: 'Debt Service', total: debtTotal }];
-  const weightedAllocations = allocateTaxReceiptWeighted(countyTax, allDeptsWithDebt, dedicatedRevenue);
-
-  const allocations = receiptMode === 'weighted'
-    ? weightedAllocations.filter((a) => a.name !== 'Debt Service')
-    : proportionalAllocations;
-  const debtAllocation = receiptMode === 'weighted'
-    ? weightedAllocations.find((a) => a.name === 'Debt Service')?.amount ?? 0
-    : proportionalDebt;
+  const allocations = allocateTaxReceipt(countyTax, serviceDepts, totalBudget);
+  const debtAllocation = Math.round(countyTax * (debtTotal / totalBudget) * 100) / 100;
 
   const chartData = [
     ...allocations.map((a) => ({ name: a.name, amount: a.amount })),
@@ -305,33 +288,13 @@ export default function ReceiptPage() {
       </div>
 
       {/* Service breakdown */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-4">
-        <h2 className="text-xl font-bold">
-          Your Tax: {formatCurrency(Math.round(countyTax))} Breakdown
-        </h2>
-        <div className="flex gap-1 bg-gray-100 rounded-lg p-0.5 text-xs">
-          <button
-            onClick={() => setReceiptMode('weighted')}
-            className={`px-3 py-1.5 rounded-md transition ${receiptMode === 'weighted' ? 'bg-white shadow-sm font-medium' : ''}`}
-          >
-            Revenue-weighted
-          </button>
-          <button
-            onClick={() => setReceiptMode('proportional')}
-            className={`px-3 py-1.5 rounded-md transition ${receiptMode === 'proportional' ? 'bg-white shadow-sm font-medium' : ''}`}
-          >
-            Proportional
-          </button>
-        </div>
-      </div>
-
-      {receiptMode === 'weighted' && (
-        <p className="text-xs text-gray-500 mb-4">
-          Revenue-weighted mode subtracts dedicated revenue (fees, grants, etc.)
-          from each department before allocating your property tax. Departments funded by dedicated
-          sources show a smaller share of your tax bill.
-        </p>
-      )}
+      <h2 className="text-xl font-bold mb-2">
+        Your Tax: {formatCurrency(Math.round(countyTax))} Breakdown
+      </h2>
+      <p className="text-xs text-gray-500 mb-4">
+        This explanatory estimate allocates the tax proportionally according to
+        each department&apos;s share of mapped General Fund appropriations.
+      </p>
 
       <div className="grid lg:grid-cols-2 gap-8 mb-8">
         <div className="bg-white rounded-xl shadow-sm border p-5">
@@ -383,22 +346,11 @@ export default function ReceiptPage() {
             </thead>
             <tbody>
               {allocations.map((a) => {
-                const w = 'dedicated' in a ? a as any : null;
                 return (
                   <tr key={a.name} className="border-b">
-                    <td className="py-2">
-                      {a.name}
-                      {receiptMode === 'weighted' && w && w.dedicated > 0 && (
-                        <span className="block text-xs text-gray-400">
-                          {formatCurrency(w.dedicated, true)} from fees
-                        </span>
-                      )}
-                    </td>
+                    <td className="py-2">{a.name}</td>
                     <td className="py-2 text-right">
                       ${a.amount.toFixed(2)}
-                      {receiptMode === 'weighted' && w && w.dedicated > 0 && a.amount === 0 && (
-                        <span className="block text-xs text-green-600">Fee-funded</span>
-                      )}
                     </td>
                     <td className="py-2 text-right">
                       ${(a.amount / 12).toFixed(2)}
@@ -418,10 +370,7 @@ export default function ReceiptPage() {
                   ${(debtAllocation / 12).toFixed(2)}
                 </td>
                 <td className="py-2 text-right text-gray-500">
-                  {receiptMode === 'weighted'
-                    ? (weightedAllocations.find((a) => a.name === 'Debt Service')?.share ?? 0).toFixed(1)
-                    : ((debtTotal / totalBudget) * 100).toFixed(1)
-                  }%
+                  {((debtTotal / totalBudget) * 100).toFixed(1)}%
                 </td>
               </tr>
               <tr className="font-semibold bg-gray-50">

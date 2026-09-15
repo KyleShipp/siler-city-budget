@@ -1,15 +1,27 @@
 {
   "fiscalYear": "FY26-27",
-  "adoptionDate": "",
+  "adoptionDate": "2026-06-15",
   "keyChange": "New fees for road closures, plan amendments, and historic courthouse rental. Watershed permit fees doubled. Environmental health permit fees increased. EV charging switched from per-kWh to per-minute pricing.",
   "categories": [
     {
       "name": "Planning & Development",
       "description": "Fees for land use permits, plan reviews, and development applications",
       "fees": [
-        { "item": "Road Closure / Right-of-way Abandonment", "amount": 750.00, "unit": "application" },
-        { "item": "Resubmittal Plan Review Fee (Tier 1/Tier 2)", "amount": 500.00, "unit": "application" },
-        { "item": "Approved Plan Amendment (Tier 1/Tier 2)", "amount": 500.00, "unit": "application" }
+        {
+          "item": "Road Closure / Right-of-way Abandonment",
+          "amount": 750.0,
+          "unit": "application"
+        },
+        {
+          "item": "Resubmittal Plan Review Fee (Tier 1/Tier 2)",
+          "amount": 500.0,
+          "unit": "application"
+        },
+        {
+          "item": "Approved Plan Amendment (Tier 1/Tier 2)",
+          "amount": 500.0,
+          "unit": "application"
+        }
       ]
     },
     {
@@ -17,101 +29,241 @@
       "description": "Permits and inspections for commercial and residential construction",
       "note": "Building permit fees are based on project valuation. See the full fee schedule for the complete rate table.",
       "fees": [
-        { "item": "Building Permit (residential)", "amount": 0.00, "unit": "based on valuation" },
-        { "item": "Building Permit (commercial)", "amount": 0.00, "unit": "based on valuation" },
-        { "item": "Concealed Weapons Permit", "amount": 80.00, "unit": "permit" },
-        { "item": "Noise Permit", "amount": 50.00, "unit": "permit" }
+        {
+          "item": "Building Permit (residential)",
+          "amount": 0.0,
+          "unit": "based on valuation"
+        },
+        {
+          "item": "Building Permit (commercial)",
+          "amount": 0.0,
+          "unit": "based on valuation"
+        },
+        {
+          "item": "Concealed Weapons Permit",
+          "amount": 80.0,
+          "unit": "permit"
+        },
+        {
+          "item": "Noise Permit",
+          "amount": 50.0,
+          "unit": "permit"
+        }
       ]
     },
     {
       "name": "Watershed Protection",
       "description": "Stormwater, erosion control, and floodplain permits",
       "fees": [
-        { "item": "Stormwater Plan Review", "amount": 250.00, "unit": "disturbed acre" },
-        { "item": "Stormwater Permit", "amount": 250.00, "unit": "disturbed acre" },
-        { "item": "Floodplain Development Permit", "amount": 300.00, "unit": "permit" },
-        { "item": "No Practical Alternatives Certification", "amount": 150.00, "unit": "application" },
-        { "item": "Re-inspection Fee (failed NOV inspection)", "amount": 250.00, "unit": "re-inspection" },
-        { "item": "Re-inspection Fee (failed permit closeout)", "amount": 150.00, "unit": "re-inspection" },
-        { "item": "Land-Disturbing Permit Renewal (2-year)", "amount": 250.00, "unit": "disturbed acre" },
-        { "item": "Land-Disturbing Permit Renewal (1-year)", "amount": 125.00, "unit": "disturbed acre" }
+        {
+          "item": "Stormwater Plan Review",
+          "amount": 250.0,
+          "unit": "disturbed acre"
+        },
+        {
+          "item": "Stormwater Permit",
+          "amount": 250.0,
+          "unit": "disturbed acre"
+        },
+        {
+          "item": "Floodplain Development Permit",
+          "amount": 300.0,
+          "unit": "permit"
+        },
+        {
+          "item": "No Practical Alternatives Certification",
+          "amount": 150.0,
+          "unit": "application"
+        },
+        {
+          "item": "Re-inspection Fee (failed NOV inspection)",
+          "amount": 250.0,
+          "unit": "re-inspection"
+        },
+        {
+          "item": "Re-inspection Fee (failed permit closeout)",
+          "amount": 150.0,
+          "unit": "re-inspection"
+        },
+        {
+          "item": "Land-Disturbing Permit Renewal (2-year)",
+          "amount": 250.0,
+          "unit": "disturbed acre"
+        },
+        {
+          "item": "Land-Disturbing Permit Renewal (1-year)",
+          "amount": 125.0,
+          "unit": "disturbed acre"
+        }
       ]
     },
     {
       "name": "Environmental Health",
       "description": "Septic system permits, food service permits, and related inspections",
       "fees": [
-        { "item": "Residential Septic Improvement Permit (2-bedroom)", "amount": 250.00, "unit": "permit" },
-        { "item": "Residential Septic Improvement Permit (3-bedroom)", "amount": 250.00, "unit": "permit" },
-        { "item": "Construction Authorization - Type I Septic", "amount": 235.00, "unit": "permit" },
-        { "item": "Construction Authorization - Type II Septic", "amount": 235.00, "unit": "permit" },
-        { "item": "Food Service Establishment Plan Review", "amount": 250.00, "unit": "review" }
+        {
+          "item": "Residential Septic Improvement Permit (2-bedroom)",
+          "amount": 250.0,
+          "unit": "permit"
+        },
+        {
+          "item": "Residential Septic Improvement Permit (3-bedroom)",
+          "amount": 250.0,
+          "unit": "permit"
+        },
+        {
+          "item": "Construction Authorization - Type I Septic",
+          "amount": 235.0,
+          "unit": "permit"
+        },
+        {
+          "item": "Construction Authorization - Type II Septic",
+          "amount": 235.0,
+          "unit": "permit"
+        },
+        {
+          "item": "Food Service Establishment Plan Review",
+          "amount": 250.0,
+          "unit": "review"
+        }
       ]
     },
     {
       "name": "Sedimentation & Erosion Control",
       "description": "Erosion control plan reviews and permits",
       "fees": [
-        { "item": "Erosion Control Plan Review", "amount": 0.00, "unit": "varies by acreage" },
-        { "item": "Stormwater Buffer Fee", "amount": 0.00, "unit": "varies" }
+        {
+          "item": "Erosion Control Plan Review",
+          "amount": 0.0,
+          "unit": "varies by acreage"
+        },
+        {
+          "item": "Stormwater Buffer Fee",
+          "amount": 0.0,
+          "unit": "varies"
+        }
       ]
     },
     {
       "name": "Register of Deeds",
       "description": "Recording fees, marriage licenses, and vital records",
       "fees": [
-        { "item": "Recording Fee (first page)", "amount": 26.00, "unit": "document" },
-        { "item": "Recording Fee (additional pages)", "amount": 4.00, "unit": "page" },
-        { "item": "Marriage License", "amount": 60.00, "unit": "license" },
-        { "item": "Birth/Death Certificate", "amount": 10.00, "unit": "copy" }
+        {
+          "item": "Recording Fee (first page)",
+          "amount": 26.0,
+          "unit": "document"
+        },
+        {
+          "item": "Recording Fee (additional pages)",
+          "amount": 4.0,
+          "unit": "page"
+        },
+        {
+          "item": "Marriage License",
+          "amount": 60.0,
+          "unit": "license"
+        },
+        {
+          "item": "Birth/Death Certificate",
+          "amount": 10.0,
+          "unit": "copy"
+        }
       ]
     },
     {
       "name": "Parks & Recreation",
       "description": "Recreation programs, facility rentals, and special events",
       "fees": [
-        { "item": "Recreation Program Fees", "amount": 0.00, "unit": "varies by program" },
-        { "item": "Athletic Field Rental", "amount": 0.00, "unit": "varies" },
-        { "item": "Senior Games Registration", "amount": 0.00, "unit": "varies by event" }
+        {
+          "item": "Recreation Program Fees",
+          "amount": 0.0,
+          "unit": "varies by program"
+        },
+        {
+          "item": "Athletic Field Rental",
+          "amount": 0.0,
+          "unit": "varies"
+        },
+        {
+          "item": "Senior Games Registration",
+          "amount": 0.0,
+          "unit": "varies by event"
+        }
       ]
     },
     {
       "name": "Agriculture & Conference Center",
       "description": "Facility rentals for the Chatham County Agriculture & Conference Center",
       "fees": [
-        { "item": "Full Exhibit Hall Extended Hours (9pm-midnight)", "amount": 600.00, "unit": "event" },
-        { "item": "1/2 Exhibit Hall Extended Hours (9pm-midnight)", "amount": 300.00, "unit": "event" },
-        { "item": "1/4 Exhibit Hall Extended Hours (9pm-midnight)", "amount": 150.00, "unit": "event" }
+        {
+          "item": "Full Exhibit Hall Extended Hours (9pm-midnight)",
+          "amount": 600.0,
+          "unit": "event"
+        },
+        {
+          "item": "1/2 Exhibit Hall Extended Hours (9pm-midnight)",
+          "amount": 300.0,
+          "unit": "event"
+        },
+        {
+          "item": "1/4 Exhibit Hall Extended Hours (9pm-midnight)",
+          "amount": 150.0,
+          "unit": "event"
+        }
       ]
     },
     {
       "name": "Governing Board",
       "description": "County facility rentals",
       "fees": [
-        { "item": "Historic Courthouse Rental", "amount": 200.00, "unit": "event + $200 deposit" }
+        {
+          "item": "Historic Courthouse Rental",
+          "amount": 200.0,
+          "unit": "event + $200 deposit"
+        }
       ]
     },
     {
       "name": "EV Charging",
       "description": "Electric vehicle charging stations at county facilities",
       "fees": [
-        { "item": "Level 2 EV Charging", "amount": 0.03, "unit": "minute" },
-        { "item": "DC Fast EV Charging", "amount": 0.30, "unit": "minute" }
+        {
+          "item": "Level 2 EV Charging",
+          "amount": 0.03,
+          "unit": "minute"
+        },
+        {
+          "item": "DC Fast EV Charging",
+          "amount": 0.3,
+          "unit": "minute"
+        }
       ]
     },
     {
       "name": "Animal Services",
       "description": "Adoption fees, spay/neuter, and animal-related services",
       "fees": [
-        { "item": "Adoption Fee", "amount": 0.00, "unit": "varies by animal" },
-        { "item": "Spay/Neuter Program", "amount": 0.00, "unit": "varies" }
+        {
+          "item": "Adoption Fee",
+          "amount": 0.0,
+          "unit": "varies by animal"
+        },
+        {
+          "item": "Spay/Neuter Program",
+          "amount": 0.0,
+          "unit": "varies"
+        }
       ]
     },
     {
       "name": "Sheriff / Law Enforcement",
       "description": "Fingerprinting, court-related fees, and law enforcement services",
       "fees": [
-        { "item": "Fingerprinting", "amount": 10.00, "unit": "set" }
+        {
+          "item": "Fingerprinting",
+          "amount": 10.0,
+          "unit": "set"
+        }
       ]
     }
   ]

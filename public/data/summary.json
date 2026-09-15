@@ -15,11 +15,12 @@
       "valueOfPenny": 2325634,
       "collectionRate": 0.985,
       "fundBalanceAppropriated": 7474362,
-      "status": "recommended",
-      "statusLabel": "Manager's Recommended Budget",
-      "statusDetail": "This budget has been recommended by the County Manager but not yet adopted by the Board of Commissioners. A public hearing and board vote will finalize the budget.",
+      "status": "adopted",
+      "statusLabel": "Adopted Budget",
+      "statusDetail": "The Board of Commissioners approved the FY2026-2027 budget on June 15, 2026. This explorer focuses on the $222.4M General Fund within the County's $303.2M all-funds budget.",
       "highlights": [
-        "Total General Fund budget of $222.4M, a 4.5% increase over FY25-26",
+        "Adopted General Fund budget of $222.4M, a 4.5% increase over FY25-26",
+        "The County's adopted all-funds budget totals $303.2M",
         "Property tax rate remains at $0.60 per $100 assessed value",
         "Total property valuation: $23.44 billion; one penny generates $2,325,634",
         "Chatham County Schools: $71.2M (largest single allocation, 32% of budget)",
@@ -36,24 +37,14 @@
           "status": "complete"
         },
         {
-          "date": "2026-05-19",
-          "event": "Board of Commissioners work session",
-          "status": "upcoming"
-        },
-        {
-          "date": "2026-06-02",
-          "event": "Public hearing on recommended budget",
-          "status": "upcoming"
-        },
-        {
-          "date": "2026-06-16",
-          "event": "Budget adoption by Board of Commissioners",
-          "status": "upcoming"
+          "date": "2026-06-15",
+          "event": "Budget adopted by Board of Commissioners",
+          "status": "complete"
         },
         {
           "date": "2026-07-01",
-          "event": "Fiscal year begins",
-          "status": "upcoming"
+          "event": "Fiscal year began",
+          "status": "complete"
         }
       ]
     }

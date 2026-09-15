@@ -2,6 +2,8 @@
 
 Interactive budget transparency tool for Chatham County, North Carolina. Turns published budget documents into searchable tables, interactive charts, department drilldowns, year-over-year comparisons, and a property tax receipt view.
 
+**Live:** https://kyleshipp.github.io/chatham-nc-budget/
+
 ## Features
 
 | Page | What it does |
@@ -17,11 +19,13 @@ Interactive budget transparency tool for Chatham County, North Carolina. Turns p
 
 | Fiscal Year | Status |
 |-------------|--------|
-| FY 2024-2025 | Actual |
 | FY 2025-2026 | Adopted |
-| FY 2026-2027 | Recommended |
+| FY 2026-2027 | Adopted |
 
-> **Note:** Data files in `public/data/` currently contain placeholder values. Replace with actual Chatham County budget data extracted from published documents.
+The explorer focuses on the General Fund. FY 2026-2027 figures are from the
+[approved budget](https://county-chatham-nc-cleardoc.cleargov.com/26276),
+adopted by the Board of Commissioners on June 15, 2026. The adopted General
+Fund totals $222.4 million; the County's all-funds budget totals $303.2 million.
 
 ## Tech Stack
 
@@ -41,19 +45,21 @@ npm run build   # Static export to /out
 
 ## Updating Data
 
-1. Extract budget data from published PDFs
-2. Update the JSON files in `public/data/`:
+1. Update the extracted values in `build_data.py`
+2. Run `python build_data.py` to regenerate the JSON files in `public/data/`:
    - `meta.json` — municipality info, tax rates, fiscal year definitions
    - `summary.json` — high-level FY summaries
    - `budget.json` — revenue line items and department expenditures
    - `cip.json` — capital improvement plan projects
    - `fees.json` — fee schedule
    - `debt.json` — debt service schedule
-3. Push to `main` — GitHub Actions deploys automatically
+3. Run `npm run build`
+4. Push to `main` — GitHub Actions deploys automatically
 
 ## Deployment
 
-Deploys to GitHub Pages via `.github/workflows/deploy.yml` on push to `main`. Production basePath: `/chatham-nc-budget`.
+Deploys to GitHub Pages via `.github/workflows/deploy.yml` on push to `main`.
+Production basePath: `/chatham-nc-budget`.
 
 ## Disclaimer
 

@@ -43,7 +43,20 @@ export default function AboutPage() {
             <tbody>
               {meta.sources.map((s) => (
                 <tr key={s.title} className="border-b">
-                  <td className="py-2">{s.title}</td>
+                  <td className="py-2">
+                    {s.url ? (
+                      <a
+                        href={s.url}
+                        className="text-chatham-blue underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {s.title}
+                      </a>
+                    ) : (
+                      s.title
+                    )}
+                  </td>
                   <td className="py-2 text-gray-500">{s.date}</td>
                   <td className="py-2 text-gray-500 capitalize">{s.type}</td>
                 </tr>
@@ -66,9 +79,9 @@ export default function AboutPage() {
           General Fund spending by department.
         </p>
         <p className="text-gray-700 mb-4">
-          Data coverage and fiscal year types (actual, adopted, recommended) are
-          listed in the data sources table above. Recommended figures may change
-          before final adoption by the Board of Commissioners.
+          FY 2025-2026 and FY 2026-2027 figures are from adopted budgets. The
+          FY 2026-2027 budget was adopted by the Board of Commissioners on June
+          15, 2026.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-3">Limitations</h2>
@@ -85,7 +98,12 @@ export default function AboutPage() {
             judgment
           </li>
           <li>
-            Recommended budget values may change before final adoption
+            This explorer focuses on the General Fund; the County&apos;s all-funds
+            budget also includes enterprise and special revenue funds
+          </li>
+          <li>
+            Department drilldowns reflect mapped departmental appropriations,
+            while top-level category totals follow the official General Fund summary
           </li>
           <li>
             Receipt estimates are explanatory allocations, not official tax bills
@@ -96,7 +114,7 @@ export default function AboutPage() {
         <p className="text-gray-700">
           For official budget documents and financial reports, visit{' '}
           <a
-            href="https://www.chathamcountync.gov"
+            href="https://www.chathamcountync.gov/government/county-budget/annual-county-budgets"
             className="text-chatham-blue underline"
             target="_blank"
             rel="noopener noreferrer"

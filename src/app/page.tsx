@@ -220,7 +220,7 @@ export default function HomePage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { label: 'Personnel', key: 'personnel' as const, color: 'bg-chatham-blue' },
-            { label: 'Operating', key: 'operating' as const, color: 'bg-chatham-gold' },
+            { label: 'Operating & Allocations', key: 'operating' as const, color: 'bg-chatham-gold' },
             { label: 'Capital', key: 'capital' as const, color: 'bg-gray-400' },
             { label: 'Debt Service', key: 'debtService' as const, color: 'bg-gray-600' },
           ].map(({ label, key, color }) => {

@@ -1,10 +1,8 @@
-"""
-Extract Chatham County FY2027 budget data from the PDF and write JSON files.
-Uses data already read from the PDF text extraction.
-"""
-import json, os
+"""Write the extracted Chatham County FY2027 approved budget data to JSON."""
+import json
+import os
 
-OUT = r"C:\Users\live\src\Chatham Dynamics\BudgetExplorer-ChathamCo\public\data"
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "public", "data")
 
 # ── meta.json ──────────────────────────────────────────────────────────────
 meta = {
@@ -21,7 +19,7 @@ meta = {
     },
     "fiscalYears": [
         {"key": "FY25-26", "label": "FY 2025-2026", "type": "adopted", "startDate": "2025-07-01", "endDate": "2026-06-30"},
-        {"key": "FY26-27", "label": "FY 2026-2027", "type": "recommended", "startDate": "2026-07-01", "endDate": "2027-06-30"},
+        {"key": "FY26-27", "label": "FY 2026-2027", "type": "adopted", "startDate": "2026-07-01", "endDate": "2027-06-30"},
     ],
     "defaultFiscalYear": "FY26-27",
     "taxRateHistory": [
@@ -52,7 +50,12 @@ meta = {
         "unassigned": 8014514
     },
     "sources": [
-        {"title": "FY2026-2027 Recommended Annual Operating Budget", "date": "2026-05-01", "type": "recommended"},
+        {
+            "title": "FY2026-2027 Approved Annual Operating Budget",
+            "date": "2026-06-15",
+            "type": "adopted",
+            "url": "https://county-chatham-nc-cleardoc.cleargov.com/26276",
+        },
     ]
 }
 
@@ -74,11 +77,12 @@ summary = {
             "valueOfPenny": 2325634,
             "collectionRate": 0.985,
             "fundBalanceAppropriated": 7474362,
-            "status": "recommended",
-            "statusLabel": "Manager's Recommended Budget",
-            "statusDetail": "This budget has been recommended by the County Manager but not yet adopted by the Board of Commissioners. A public hearing and board vote will finalize the budget.",
+            "status": "adopted",
+            "statusLabel": "Adopted Budget",
+            "statusDetail": "The Board of Commissioners approved the FY2026-2027 budget on June 15, 2026. This explorer focuses on the $222.4M General Fund within the County's $303.2M all-funds budget.",
             "highlights": [
-                "Total General Fund budget of $222.4M, a 4.5% increase over FY25-26",
+                "Adopted General Fund budget of $222.4M, a 4.5% increase over FY25-26",
+                "The County's adopted all-funds budget totals $303.2M",
                 "Property tax rate remains at $0.60 per $100 assessed value",
                 "Total property valuation: $23.44 billion; one penny generates $2,325,634",
                 "Chatham County Schools: $71.2M (largest single allocation, 32% of budget)",
@@ -90,10 +94,8 @@ summary = {
             ],
             "timeline": [
                 {"date": "2026-05-01", "event": "Manager's Recommended Budget presented", "status": "complete"},
-                {"date": "2026-05-19", "event": "Board of Commissioners work session", "status": "upcoming"},
-                {"date": "2026-06-02", "event": "Public hearing on recommended budget", "status": "upcoming"},
-                {"date": "2026-06-16", "event": "Budget adoption by Board of Commissioners", "status": "upcoming"},
-                {"date": "2026-07-01", "event": "Fiscal year begins", "status": "upcoming"},
+                {"date": "2026-06-15", "event": "Budget adopted by Board of Commissioners", "status": "complete"},
+                {"date": "2026-07-01", "event": "Fiscal year began", "status": "complete"},
             ]
         }
     }
@@ -397,8 +399,8 @@ def calc_totals(fy):
 
 # Use the actual PDF totals for the top-level expenditure categories
 expenditure_totals = {
-    "FY25-26": {"personnel": 46600876, "operating": 26450387, "capital": 1457285, "debtService": 23988100, "total": 212802940},
-    "FY26-27": {"personnel": 48771279, "operating": 28383614, "capital": 1544786, "debtService": 22819427, "total": 222387963},
+    "FY25-26": {"personnel": 68657959, "operating": 118699596, "capital": 1457285, "debtService": 23988100, "total": 212802940},
+    "FY26-27": {"personnel": 72039524, "operating": 125984226, "capital": 1544786, "debtService": 22819427, "total": 222387963},
 }
 
 budget = {
@@ -425,15 +427,12 @@ cip = {
 }
 
 # ── fees.json ──────────────────────────────────────────────────────────────
-fees = {
-    "fiscalYear": "FY26-27",
-    "adoptionDate": "",
-    "keyChange": "See Appendix C of the FY2026-2027 Recommended Budget for the full consolidated fee schedule",
-    "categories": [
-        {"name": "General Services", "description": "See the full budget document, Appendix C, for the complete fee schedule",
-         "fees": [{"item": "See Appendix C in budget document", "amount": 0, "unit": "varies"}]}
-    ]
-}
+# The detailed fee schedule is maintained in its JSON file because it is
+# extracted independently from Appendix C.
+with open(os.path.join(OUT, "fees.json")) as fee_file:
+    fees = json.load(fee_file)
+fees["fiscalYear"] = "FY26-27"
+fees["adoptionDate"] = "2026-06-15"
 
 # ── debt.json ──────────────────────────────────────────────────────────────
 debt = {
