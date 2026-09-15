@@ -10,6 +10,7 @@ Interactive budget transparency tool for Siler City, North Carolina. Turns the a
 |------|-------------|
 | **Overview** | Dashboard with total budget, per-capita spending, revenue/department breakdown, and budget highlights |
 | **Compare Years** | Side-by-side spending and revenue comparison across fiscal years with $ and % changes |
+| **Tax Base** | Current parcel assessed-value mix by property type and gross rate-equivalent amounts |
 | **Your Receipt** | Look up your property via Chatham County GIS and estimate the Siler City portion of your tax bill |
 | **Fund Overview** | Review all five annually budgeted funds |
 | **Fee Schedule** | Searchable highlights from the adopted fee schedule |
@@ -51,8 +52,9 @@ npm run build   # Static export to /out
    - `summary.json` — high-level FY summaries
    - `budget.json` — revenue line items and department expenditures
    - `fees.json` — selected fee schedule highlights
-3. Run `npm run build`
-4. Push to `main` — GitHub Actions deploys automatically
+3. Run `python generate_taxbase.py` to refresh `taxbase.json` from Chatham County GIS
+4. Run `npm run build`
+5. Push to `main` — GitHub Actions deploys automatically
 
 ## Deployment
 

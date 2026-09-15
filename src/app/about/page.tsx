@@ -23,6 +23,7 @@ export default function AboutPage() {
           <li>Compare budgeted spending across fiscal years</li>
           <li>Explore adopted spending by department</li>
           <li>See which departments drive changes over time</li>
+          <li>Review the parcel property tax base by property type</li>
           <li>
             Estimate how your Town property tax bill is distributed across services
           </li>
@@ -78,6 +79,10 @@ export default function AboutPage() {
           applicable Siler City property tax rate, and the relative share of
           General Fund spending by department.
         </p>
+        <p className="text-gray-700 mb-2">
+          The tax-base view groups the County&apos;s 2027 CAMA parcel assessment
+          roll for the Siler City municipal tax district by property use code.
+        </p>
         <p className="text-gray-700 mb-4">
           FY 2025-2026 and FY 2026-2027 figures are adopted budget amounts. The
           Board of Commissioners unanimously adopted the FY 2026-2027 budget on
@@ -107,6 +112,10 @@ export default function AboutPage() {
           </li>
           <li>
             Receipt estimates are explanatory allocations, not official tax bills
+          </li>
+          <li>
+            Parcel tax-base figures exclude vehicles, business personal property,
+            and public-service company property
           </li>
           <li>
             The $200,000 manual estimate is an example starting value, not a published

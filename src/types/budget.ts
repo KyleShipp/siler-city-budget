@@ -115,6 +115,27 @@ export interface BudgetData {
   expenditureTotals: Record<string, ExpenditureTotals>;
 }
 
+export interface TaxBaseGroup {
+  group: string;
+  parcels: number;
+  assessedValue: number;
+  pctOfBase: number;
+  townTax: number;
+  countyTax: number;
+  totalTax: number;
+}
+
+export interface TaxBaseData {
+  fiscalYear: string;
+  assessmentYear: number;
+  generated: string;
+  townRate: number;
+  countyRate: number;
+  source: string;
+  groups: TaxBaseGroup[];
+  total: TaxBaseGroup;
+}
+
 export interface Fee {
   item: string;
   amount: number;

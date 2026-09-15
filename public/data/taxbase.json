@@ -1,0 +1,64 @@
+{
+  "fiscalYear": "FY26-27",
+  "assessmentYear": 2027,
+  "generated": "2026-09-15",
+  "townRate": 0.54,
+  "countyRate": 0.6,
+  "source": "Chatham County CAMA Parcels, 2027 assessment roll, SILER CITY CITY municipal tax district",
+  "groups": [
+    {
+      "group": "Residential",
+      "parcels": 2196,
+      "assessedValue": 296251937,
+      "pctOfBase": 33.7,
+      "townTax": 1599760,
+      "countyTax": 1777512,
+      "totalTax": 3377272
+    },
+    {
+      "group": "Commercial",
+      "parcels": 456,
+      "assessedValue": 173635127,
+      "pctOfBase": 19.8,
+      "townTax": 937630,
+      "countyTax": 1041811,
+      "totalTax": 1979441
+    },
+    {
+      "group": "Industrial",
+      "parcels": 63,
+      "assessedValue": 394902077,
+      "pctOfBase": 45.0,
+      "townTax": 2132471,
+      "countyTax": 2369412,
+      "totalTax": 4501883
+    },
+    {
+      "group": "Exempt / Partial Exempt",
+      "parcels": 246,
+      "assessedValue": 13730418,
+      "pctOfBase": 1.6,
+      "townTax": 74144,
+      "countyTax": 82383,
+      "totalTax": 156527
+    },
+    {
+      "group": "Other",
+      "parcels": 0,
+      "assessedValue": 0,
+      "pctOfBase": 0.0,
+      "townTax": 0,
+      "countyTax": 0,
+      "totalTax": 0
+    }
+  ],
+  "total": {
+    "group": "TOTAL",
+    "parcels": 2961,
+    "assessedValue": 878519559,
+    "pctOfBase": 100.0,
+    "townTax": 4744006,
+    "countyTax": 5271117,
+    "totalTax": 10015123
+  }
+}
