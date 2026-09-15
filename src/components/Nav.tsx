@@ -28,7 +28,15 @@ function NavigationLink({
 }) {
   if (href === '/') {
     return (
-      <a href={homeHref} className={className} onClick={onClick}>
+      <a
+        href={homeHref}
+        className={className}
+        onClick={(event) => {
+          event.preventDefault();
+          onClick?.();
+          window.location.assign(homeHref);
+        }}
+      >
         {label}
       </a>
     );
