@@ -4,6 +4,7 @@ const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   output: 'export',
   basePath: isProd ? '/siler-city-budget' : '',
+  trailingSlash: true,
   images: { unoptimized: true },
 };
 
