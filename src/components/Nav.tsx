@@ -13,6 +13,34 @@ const links = [
   { href: '/about', label: 'About' },
 ];
 
+const homeHref = process.env.NODE_ENV === 'production' ? '/siler-city-budget/' : '/';
+
+function NavigationLink({
+  href,
+  label,
+  className,
+  onClick,
+}: {
+  href: string;
+  label: string;
+  className: string;
+  onClick?: () => void;
+}) {
+  if (href === '/') {
+    return (
+      <a href={homeHref} className={className} onClick={onClick}>
+        {label}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={className} onClick={onClick}>
+      {label}
+    </Link>
+  );
+}
+
 export default function Nav() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -27,9 +55,12 @@ export default function Nav() {
     <nav className="bg-chatham-blue text-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="font-bold text-lg tracking-tight" onClick={closeMobileMenu}>
-            Siler City, NC Budget
-          </Link>
+          <NavigationLink
+            href="/"
+            label="Siler City, NC Budget"
+            className="font-bold text-lg tracking-tight"
+            onClick={closeMobileMenu}
+          />
 
           <button
             type="button"
@@ -44,17 +75,16 @@ export default function Nav() {
 
           <div className="hidden md:flex gap-1">
             {links.map((link) => (
-              <Link
+              <NavigationLink
                 key={link.href}
                 href={link.href}
+                label={link.label}
                 className={`px-3 py-2 rounded text-sm font-medium transition-colors ${
                   isActive(link.href)
                     ? 'bg-white/20'
                     : 'hover:bg-white/10'
                 }`}
-              >
-                {link.label}
-              </Link>
+              />
             ))}
           </div>
         </div>
@@ -65,18 +95,17 @@ export default function Nav() {
         >
           <div className="grid gap-1 border-t border-white/20 pt-3">
             {links.map((link) => (
-              <Link
+              <NavigationLink
                 key={link.href}
                 href={link.href}
+                label={link.label}
                 onClick={closeMobileMenu}
                 className={`px-3 py-2 rounded text-sm font-medium transition-colors ${
                   isActive(link.href)
                     ? 'bg-white/20'
                     : 'hover:bg-white/10'
                 }`}
-              >
-                {link.label}
-              </Link>
+              />
             ))}
           </div>
         </div>
