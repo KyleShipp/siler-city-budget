@@ -27,7 +27,7 @@ const COLORS = [
   '#9e9e9e', '#bdbdbd', '#e0e0e0',
 ];
 
-const STORAGE_KEY = 'chatham-co-receipt-parcel';
+const STORAGE_KEY = 'siler-city-receipt-parcel';
 
 function loadSaved(): { parcel: ParcelResult | null; homeValue: number; addressQuery: string } {
   if (typeof window === 'undefined') return { parcel: null, homeValue: meta.municipality.medianHomeValue, addressQuery: '' };
@@ -87,8 +87,8 @@ export default function ReceiptPage() {
     setHomeValue(p.assessedValue);
   }
 
-  // Tax calculations — county-only (no separate town tax)
-  const countyTax = calculateTaxBill(homeValue, fyData.taxRate, fyData.collectionRate);
+  const taxableValue = selectedParcel && !selectedParcel.inTown ? 0 : homeValue;
+  const townTax = calculateTaxBill(taxableValue, fyData.taxRate, fyData.collectionRate);
 
   // Service allocations
   const serviceDepts = budget.departments
@@ -99,8 +99,8 @@ export default function ReceiptPage() {
     budget.departments.find((d) => d.id === 'debt-service')?.amounts[fy]?.total ?? 0;
   const totalBudget = serviceTotal + debtTotal;
 
-  const allocations = allocateTaxReceipt(countyTax, serviceDepts, totalBudget);
-  const debtAllocation = Math.round(countyTax * (debtTotal / totalBudget) * 100) / 100;
+  const allocations = allocateTaxReceipt(townTax, serviceDepts, totalBudget);
+  const debtAllocation = Math.round(townTax * (debtTotal / totalBudget) * 100) / 100;
 
   const chartData = [
     ...allocations.map((a) => ({ name: a.name, amount: a.amount })),
@@ -111,8 +111,8 @@ export default function ReceiptPage() {
     <div>
       <h1 className="text-3xl font-bold mb-2">Your Property Tax Receipt</h1>
       <p className="text-gray-600 mb-8">
-        Look up your property to see how your Chatham County tax bill breaks
-        down across county services.
+        Look up your property to see how your Siler City tax bill breaks down
+        across Town services.
       </p>
 
       {/* Address Lookup */}
@@ -136,7 +136,7 @@ export default function ReceiptPage() {
           </button>
         </div>
         <p className="text-xs text-gray-400 mt-2">
-          Searches Chatham County GIS parcel records in real time
+          Searches Chatham County GIS parcel records in real time and identifies Siler City parcels
         </p>
 
         {error && (
@@ -200,6 +200,12 @@ export default function ReceiptPage() {
                 {formatCurrency(selectedParcel.buildingValue)}
               </p>
             </div>
+            {!selectedParcel.inTown && (
+              <p className="mt-3 text-sm font-medium text-amber-700">
+                This parcel is not identified as being in the Siler City tax district,
+                so no Siler City municipal tax is estimated.
+              </p>
+            )}
           </div>
         </div>
       )}
@@ -230,7 +236,7 @@ export default function ReceiptPage() {
               className="border rounded px-3 py-1.5 text-lg font-semibold w-44"
             />
             <p className="text-sm text-gray-500">
-              Median: {formatCurrency(meta.municipality.medianHomeValue)}
+              Example starting value: {formatCurrency(meta.municipality.medianHomeValue)}
             </p>
           </div>
         </div>
@@ -239,22 +245,21 @@ export default function ReceiptPage() {
       {/* Tax bill summary */}
       <div className="grid lg:grid-cols-2 gap-6 mb-8">
         <div className="bg-white rounded-xl shadow-sm border p-6">
-          <h2 className="text-lg font-semibold mb-1">Your Annual County Tax</h2>
+          <h2 className="text-lg font-semibold mb-1">Your Annual Siler City Tax</h2>
           <p className="text-3xl font-bold text-gray-900">
-            {formatCurrency(Math.round(countyTax))}
+            {formatCurrency(Math.round(townTax))}
             <span className="text-base font-normal text-gray-400 ml-2">/ year</span>
           </p>
           <p className="text-sm text-gray-500 mb-4">
-            County rate: ${fyData.taxRate.toFixed(2)} per $100 assessed value
+            Town rate: ${fyData.taxRate.toFixed(2)} per $100 assessed value
           </p>
 
           <div className="mt-4 pt-4 border-t text-xs text-gray-400">
             <p>
-              Monthly: {formatCurrency(Math.round(countyTax / 12))}
+              Monthly: {formatCurrency(Math.round(townTax / 12))}
             </p>
             <p className="mt-1">
-              Note: If your property is within a municipal boundary (Pittsboro, Siler City, 
-              Goldston, etc.), you will also owe a separate municipal tax not shown here.
+              Chatham County property tax is separate and is not shown here.
             </p>
           </div>
         </div>
@@ -289,7 +294,7 @@ export default function ReceiptPage() {
 
       {/* Service breakdown */}
       <h2 className="text-xl font-bold mb-2">
-        Your Tax: {formatCurrency(Math.round(countyTax))} Breakdown
+        Your Tax: {formatCurrency(Math.round(townTax))} Breakdown
       </h2>
       <p className="text-xs text-gray-500 mb-4">
         This explanatory estimate allocates the tax proportionally according to
@@ -299,7 +304,7 @@ export default function ReceiptPage() {
       <div className="grid lg:grid-cols-2 gap-8 mb-8">
         <div className="bg-white rounded-xl shadow-sm border p-5">
           <h3 className="text-sm font-semibold text-gray-500 mb-3">
-            County Services
+            Town Services
           </h3>
           <ResponsiveContainer
             width="100%"
@@ -374,12 +379,12 @@ export default function ReceiptPage() {
                 </td>
               </tr>
               <tr className="font-semibold bg-gray-50">
-                <td className="py-2">County Total</td>
+                <td className="py-2">Town Total</td>
                 <td className="py-2 text-right">
-                  {formatCurrency(Math.round(countyTax))}
+                  {formatCurrency(Math.round(townTax))}
                 </td>
                 <td className="py-2 text-right">
-                  {formatCurrency(Math.round(countyTax / 12))}
+                  {formatCurrency(Math.round(townTax / 12))}
                 </td>
                 <td className="py-2 text-right">100%</td>
               </tr>
@@ -390,7 +395,7 @@ export default function ReceiptPage() {
             Property taxes fund a portion of the General Fund — the rest
             comes from sales tax, intergovernmental revenue, fees, and other
             sources. The allocations above show each department&apos;s proportional
-            share applied to your tax bill. Municipal taxes (if applicable)
+            share applied to your tax bill. Chatham County taxes and other charges
             are not included.
           </p>
         </div>

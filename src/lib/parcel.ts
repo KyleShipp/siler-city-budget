@@ -23,7 +23,7 @@ export interface ParcelResult {
   taxDistrict: string;
   community: string;
   landUse: string;
-  inCounty: boolean;
+  inTown: boolean;
 }
 
 interface ArcGISFeature {
@@ -47,7 +47,7 @@ function toParcel(f: ArcGISFeature): ParcelResult {
     taxDistrict: String(a.tax_district_desc ?? ''),
     community: String(a.community_name ?? ''),
     landUse: String(a.land_use ?? ''),
-    inCounty: true, // All Chatham County parcels are in the county
+    inTown: String(a.tax_district_desc ?? '').toUpperCase().includes('SILER'),
   };
 }
 

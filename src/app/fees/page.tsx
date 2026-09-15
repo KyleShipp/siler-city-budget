@@ -14,7 +14,7 @@ export default function FeesPage() {
     <div>
       <h1 className="text-3xl font-bold mb-2">Fee Schedule</h1>
       <p className="text-gray-600 mb-2">
-        General Fund Fee Schedule for {fees.fiscalYear}
+        Selected adopted fees for {fees.fiscalYear}
       </p>
 
       {/* Key change callout */}
@@ -24,6 +24,11 @@ export default function FeesPage() {
           {fees.keyChange}
         </p>
       </div>
+
+      <p className="text-sm text-gray-500 mb-6">
+        This page highlights commonly used fees. Consult the official adopted
+        budget for the complete controlling fee schedule and exceptions.
+      </p>
 
       {/* Search */}
       <div className="mb-6">

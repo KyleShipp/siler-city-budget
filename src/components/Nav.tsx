@@ -8,7 +8,7 @@ const links = [
   { href: '/', label: 'Overview' },
   { href: '/compare', label: 'Compare Years' },
   { href: '/receipt', label: 'Your Receipt' },
-  { href: '/cip', label: 'Capital Plan' },
+  { href: '/funds', label: 'Fund Overview' },
   { href: '/fees', label: 'Fee Schedule' },
   { href: '/about', label: 'About' },
 ];
@@ -28,7 +28,7 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="font-bold text-lg tracking-tight" onClick={closeMobileMenu}>
-            Chatham County, NC Budget
+            Siler City, NC Budget
           </Link>
 
           <button

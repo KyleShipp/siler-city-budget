@@ -1,14 +1,14 @@
 {
   "municipality": {
-    "name": "Chatham County",
+    "name": "Siler City",
     "state": "North Carolina",
     "county": "Chatham",
-    "type": "county",
-    "founded": 1771,
-    "population": 79200,
-    "medianHomeValue": 350000,
-    "medianHouseholdIncome": 72000,
-    "website": "https://www.chathamcountync.gov"
+    "type": "town",
+    "founded": 1887,
+    "population": 7702,
+    "medianHomeValue": 200000,
+    "medianHouseholdIncome": 0,
+    "website": "https://www.silercity.gov"
   },
   "fiscalYears": [
     {
@@ -29,64 +29,40 @@
   "defaultFiscalYear": "FY26-27",
   "taxRateHistory": [
     {
-      "year": "FY22-23",
-      "rate": 0.725
-    },
-    {
-      "year": "FY23-24",
-      "rate": 0.725
-    },
-    {
-      "year": "FY24-25",
-      "rate": 0.725
-    },
-    {
       "year": "FY25-26",
-      "rate": 0.6
+      "rate": 0.54
     },
     {
       "year": "FY26-27",
-      "rate": 0.6
+      "rate": 0.54
     }
   ],
   "valueOfPenny": [
     {
-      "year": "2025",
-      "value": 2253000
-    },
-    {
-      "year": "2026",
-      "value": 2325634
+      "year": "FY26-27",
+      "value": 139899
     }
   ],
-  "collectionRate": 0.985,
-  "countyTaxRates": {
-    "county": "Chatham",
-    "rates": [
-      {
-        "year": "FY25-26",
-        "rate": 0.6
-      },
-      {
-        "year": "FY26-27",
-        "rate": 0.6
-      }
-    ],
-    "note": "County rate decreased from $0.725 to $0.60 following the 2025 revaluation"
-  },
-  "fundBalancePolicy": 0.15,
+  "collectionRate": 1.0,
+  "fundBalancePolicy": 0.2,
   "lgcMinimum": 0.08,
   "fundBalance": {
-    "endingFY2425": 8014514,
+    "endingFY2425": 0,
     "assigned": 0,
-    "unassigned": 8014514
+    "unassigned": 0
   },
   "sources": [
     {
-      "title": "FY2026-2027 Approved Annual Operating Budget",
-      "date": "2026-06-15",
+      "title": "Fiscal Year 2026-2027 Adopted Budget",
+      "date": "2026-05-18",
       "type": "adopted",
-      "url": "https://county-chatham-nc-cleardoc.cleargov.com/26276"
+      "url": "https://www.silercity.gov/ArchiveCenter/ViewFile/Item/71"
+    },
+    {
+      "title": "May 18, 2026 Board of Commissioners Minutes",
+      "date": "2026-05-18",
+      "type": "minutes",
+      "url": "https://www.silercity.gov/AgendaCenter/ViewFile/Minutes/_05182026-881"
     }
   ]
 }

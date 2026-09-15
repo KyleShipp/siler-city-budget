@@ -58,7 +58,7 @@ export default function HomePage() {
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">
-            Chatham County
+            Siler City
           </h1>
           <p className="text-lg text-gray-600 mt-1">
             General Fund Budget &middot;{' '}
@@ -132,28 +132,23 @@ export default function HomePage() {
           sub={`1¢ = ${formatCurrency(fy.valueOfPenny)}`}
         />
         <StatCard
-          label="Personnel"
+          label="Largest Department"
           value={formatCurrency(
-            budget.expenditureTotals[selectedFY]?.personnel ?? 0,
+            Math.max(
+              ...budget.departments
+                .filter((dept) => dept.id !== 'non-departmental')
+                .map((dept) => dept.amounts[selectedFY]?.total ?? 0)
+            ),
             true
           )}
-          sub={`${(
-            ((budget.expenditureTotals[selectedFY]?.personnel ?? 0) /
-              fy.totalExpenditures) *
-            100
-          ).toFixed(0)}% of budget`}
+          sub={budget.departments
+            .filter((dept) => dept.id !== 'non-departmental')
+            .sort((a, b) => (b.amounts[selectedFY]?.total ?? 0) - (a.amounts[selectedFY]?.total ?? 0))[0]?.name}
         />
         <StatCard
-          label="Debt Service"
-          value={formatCurrency(
-            budget.expenditureTotals[selectedFY]?.debtService ?? 0,
-            true
-          )}
-          sub={`${(
-            ((budget.expenditureTotals[selectedFY]?.debtService ?? 0) /
-              fy.totalExpenditures) *
-            100
-          ).toFixed(1)}% of budget`}
+          label="Fund Balance Use"
+          value={formatCurrency(fy.fundBalanceAppropriated, true)}
+          sub={`${((fy.fundBalanceAppropriated / fy.totalExpenditures) * 100).toFixed(1)}% of budget`}
         />
       </div>
 
@@ -219,10 +214,10 @@ export default function HomePage() {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: 'Personnel', key: 'personnel' as const, color: 'bg-chatham-blue' },
-            { label: 'Operating & Allocations', key: 'operating' as const, color: 'bg-chatham-gold' },
+            { label: 'Operating Departments', key: 'personnel' as const, color: 'bg-chatham-blue' },
+            { label: 'Non-Departmental', key: 'operating' as const, color: 'bg-chatham-gold' },
             { label: 'Capital', key: 'capital' as const, color: 'bg-gray-400' },
-            { label: 'Debt Service', key: 'debtService' as const, color: 'bg-gray-600' },
+            { label: 'Debt / Transfers', key: 'debtService' as const, color: 'bg-gray-600' },
           ].map(({ label, key, color }) => {
             const val = budget.expenditureTotals[selectedFY]?.[key] ?? 0;
             const pct = ((val / fy.totalExpenditures) * 100).toFixed(1);

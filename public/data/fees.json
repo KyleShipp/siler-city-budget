@@ -1,268 +1,231 @@
 {
   "fiscalYear": "FY26-27",
-  "adoptionDate": "2026-06-15",
-  "keyChange": "New fees for road closures, plan amendments, and historic courthouse rental. Watershed permit fees doubled. Environmental health permit fees increased. EV charging switched from per-kWh to per-minute pricing.",
+  "adoptionDate": "2026-05-18",
+  "keyChange": "The adopted schedule includes updated recreation, planning, solid waste, and utility rates. The Board discussed Spring Chicken Festival vendor pricing before unanimously adopting the budget.",
   "categories": [
     {
-      "name": "Planning & Development",
-      "description": "Fees for land use permits, plan reviews, and development applications",
+      "name": "Parks & Recreation Programs",
       "fees": [
         {
-          "item": "Road Closure / Right-of-way Abandonment",
-          "amount": 750.0,
-          "unit": "application"
+          "item": "Youth Flag Football",
+          "amount": 35,
+          "unit": "participant"
         },
         {
-          "item": "Resubmittal Plan Review Fee (Tier 1/Tier 2)",
-          "amount": 500.0,
-          "unit": "application"
+          "item": "Tackle Football",
+          "amount": 60,
+          "unit": "participant"
         },
         {
-          "item": "Approved Plan Amendment (Tier 1/Tier 2)",
-          "amount": 500.0,
-          "unit": "application"
+          "item": "Youth Basketball",
+          "amount": 20,
+          "unit": "participant"
+        },
+        {
+          "item": "Youth Baseball / Softball",
+          "amount": 35,
+          "unit": "participant"
+        },
+        {
+          "item": "Swimming Lessons",
+          "amount": 65,
+          "unit": "participant"
+        },
+        {
+          "item": "Swimming Pool Admission",
+          "amount": 5,
+          "unit": "person"
+        },
+        {
+          "item": "Swimming Pool Family Season Pass",
+          "amount": 230,
+          "unit": "household"
         }
       ]
     },
     {
-      "name": "Building Inspections",
-      "description": "Permits and inspections for commercial and residential construction",
-      "note": "Building permit fees are based on project valuation. See the full fee schedule for the complete rate table.",
+      "name": "Facility & Field Rentals",
       "fees": [
         {
-          "item": "Building Permit (residential)",
-          "amount": 0.0,
-          "unit": "based on valuation"
+          "item": "Ernest Ramsey Gym",
+          "amount": 30,
+          "unit": "hour"
         },
         {
-          "item": "Building Permit (commercial)",
-          "amount": 0.0,
-          "unit": "based on valuation"
+          "item": "Park Pavilion",
+          "amount": 25,
+          "unit": "hour"
         },
         {
-          "item": "Concealed Weapons Permit",
-          "amount": 80.0,
-          "unit": "permit"
+          "item": "Two-hour Pool Rental",
+          "amount": 200,
+          "unit": "event"
         },
         {
-          "item": "Noise Permit",
-          "amount": 50.0,
-          "unit": "permit"
+          "item": "Baseball / Softball Field without lights",
+          "amount": 40,
+          "unit": "hour"
+        },
+        {
+          "item": "Baseball / Softball Field with lights",
+          "amount": 75,
+          "unit": "hour"
+        },
+        {
+          "item": "Athletic Tournament Complex",
+          "amount": 750,
+          "unit": "day"
         }
       ]
     },
     {
-      "name": "Watershed Protection",
-      "description": "Stormwater, erosion control, and floodplain permits",
+      "name": "Community Development & Planning",
       "fees": [
         {
-          "item": "Stormwater Plan Review",
-          "amount": 250.0,
-          "unit": "disturbed acre"
-        },
-        {
-          "item": "Stormwater Permit",
-          "amount": 250.0,
-          "unit": "disturbed acre"
+          "item": "Abatement Fee",
+          "amount": 180,
+          "unit": "case"
         },
         {
           "item": "Floodplain Development Permit",
-          "amount": 300.0,
+          "amount": 100,
           "unit": "permit"
         },
         {
-          "item": "No Practical Alternatives Certification",
-          "amount": 150.0,
+          "item": "Street Closing Petition (NCGS 160A-299)",
+          "amount": 1700,
+          "unit": "petition"
+        },
+        {
+          "item": "Annexation Petition",
+          "amount": 250,
+          "unit": "petition"
+        },
+        {
+          "item": "Conditional Zoning",
+          "amount": 700,
           "unit": "application"
         },
         {
-          "item": "Re-inspection Fee (failed NOV inspection)",
-          "amount": 250.0,
-          "unit": "re-inspection"
+          "item": "Rezoning",
+          "amount": 600,
+          "unit": "application"
         },
         {
-          "item": "Re-inspection Fee (failed permit closeout)",
-          "amount": 150.0,
-          "unit": "re-inspection"
+          "item": "Text Amendment",
+          "amount": 1000,
+          "unit": "application"
         },
         {
-          "item": "Land-Disturbing Permit Renewal (2-year)",
-          "amount": 250.0,
-          "unit": "disturbed acre"
+          "item": "Variance",
+          "amount": 450,
+          "unit": "application"
         },
         {
-          "item": "Land-Disturbing Permit Renewal (1-year)",
-          "amount": 125.0,
-          "unit": "disturbed acre"
-        }
-      ]
-    },
-    {
-      "name": "Environmental Health",
-      "description": "Septic system permits, food service permits, and related inspections",
-      "fees": [
-        {
-          "item": "Residential Septic Improvement Permit (2-bedroom)",
-          "amount": 250.0,
+          "item": "Watershed Protection Permit",
+          "amount": 50,
           "unit": "permit"
         },
         {
-          "item": "Residential Septic Improvement Permit (3-bedroom)",
-          "amount": 250.0,
+          "item": "Zoning Certification Letter",
+          "amount": 150,
+          "unit": "letter"
+        },
+        {
+          "item": "New Single- or Two-Family Zoning Permit",
+          "amount": 75,
           "unit": "permit"
+        }
+      ]
+    },
+    {
+      "name": "Public Works & General Services",
+      "fees": [
+        {
+          "item": "Residential Solid Waste and Recycling Cart",
+          "amount": 269,
+          "unit": "year"
         },
         {
-          "item": "Construction Authorization - Type I Septic",
-          "amount": 235.0,
+          "item": "Commercial Solid Waste and Recycling Cart",
+          "amount": 359,
+          "unit": "year"
+        },
+        {
+          "item": "Encroachment Agreement",
+          "amount": 100,
+          "unit": "agreement"
+        },
+        {
+          "item": "Roll-Off Waste Container",
+          "amount": 300,
+          "unit": "container plus tipping"
+        },
+        {
+          "item": "False Fire Alarm - Excessive Calls",
+          "amount": 500,
+          "unit": "call"
+        },
+        {
+          "item": "Fingerprint Card - Town Resident",
+          "amount": 5,
+          "unit": "card"
+        },
+        {
+          "item": "Yard Sale Permit",
+          "amount": 5,
           "unit": "permit"
-        },
-        {
-          "item": "Construction Authorization - Type II Septic",
-          "amount": 235.0,
-          "unit": "permit"
-        },
-        {
-          "item": "Food Service Establishment Plan Review",
-          "amount": 250.0,
-          "unit": "review"
         }
       ]
     },
     {
-      "name": "Sedimentation & Erosion Control",
-      "description": "Erosion control plan reviews and permits",
+      "name": "Utility Service Area",
+      "description": "Published with the Town budget; utility operations are transitioning to Tri-River Water.",
       "fees": [
         {
-          "item": "Erosion Control Plan Review",
-          "amount": 0.0,
-          "unit": "varies by acreage"
+          "item": "Account Deposit",
+          "amount": 75,
+          "unit": "account"
         },
         {
-          "item": "Stormwater Buffer Fee",
-          "amount": 0.0,
-          "unit": "varies"
-        }
-      ]
-    },
-    {
-      "name": "Register of Deeds",
-      "description": "Recording fees, marriage licenses, and vital records",
-      "fees": [
-        {
-          "item": "Recording Fee (first page)",
-          "amount": 26.0,
-          "unit": "document"
+          "item": "Residential Water Base - Inside Town",
+          "amount": 31.24,
+          "unit": "month"
         },
         {
-          "item": "Recording Fee (additional pages)",
-          "amount": 4.0,
-          "unit": "page"
+          "item": "Residential Water Usage - Inside Town",
+          "amount": 6.35,
+          "unit": "1,000 gallons"
         },
         {
-          "item": "Marriage License",
-          "amount": 60.0,
-          "unit": "license"
+          "item": "Residential Sewer Base - Inside Town",
+          "amount": 21.21,
+          "unit": "month"
         },
         {
-          "item": "Birth/Death Certificate",
-          "amount": 10.0,
-          "unit": "copy"
-        }
-      ]
-    },
-    {
-      "name": "Parks & Recreation",
-      "description": "Recreation programs, facility rentals, and special events",
-      "fees": [
-        {
-          "item": "Recreation Program Fees",
-          "amount": 0.0,
-          "unit": "varies by program"
+          "item": "Residential Sewer Usage - Inside Town",
+          "amount": 8.81,
+          "unit": "1,000 gallons"
         },
         {
-          "item": "Athletic Field Rental",
-          "amount": 0.0,
-          "unit": "varies"
+          "item": "3/4-inch Water Tap",
+          "amount": 1350,
+          "unit": "tap"
         },
         {
-          "item": "Senior Games Registration",
-          "amount": 0.0,
-          "unit": "varies by event"
-        }
-      ]
-    },
-    {
-      "name": "Agriculture & Conference Center",
-      "description": "Facility rentals for the Chatham County Agriculture & Conference Center",
-      "fees": [
-        {
-          "item": "Full Exhibit Hall Extended Hours (9pm-midnight)",
-          "amount": 600.0,
-          "unit": "event"
+          "item": "4-inch Sewer Tap",
+          "amount": 1750,
+          "unit": "tap"
         },
         {
-          "item": "1/2 Exhibit Hall Extended Hours (9pm-midnight)",
-          "amount": 300.0,
-          "unit": "event"
+          "item": "Late Fee",
+          "amount": 5,
+          "unit": "occurrence"
         },
         {
-          "item": "1/4 Exhibit Hall Extended Hours (9pm-midnight)",
-          "amount": 150.0,
-          "unit": "event"
-        }
-      ]
-    },
-    {
-      "name": "Governing Board",
-      "description": "County facility rentals",
-      "fees": [
-        {
-          "item": "Historic Courthouse Rental",
-          "amount": 200.0,
-          "unit": "event + $200 deposit"
-        }
-      ]
-    },
-    {
-      "name": "EV Charging",
-      "description": "Electric vehicle charging stations at county facilities",
-      "fees": [
-        {
-          "item": "Level 2 EV Charging",
-          "amount": 0.03,
-          "unit": "minute"
-        },
-        {
-          "item": "DC Fast EV Charging",
-          "amount": 0.3,
-          "unit": "minute"
-        }
-      ]
-    },
-    {
-      "name": "Animal Services",
-      "description": "Adoption fees, spay/neuter, and animal-related services",
-      "fees": [
-        {
-          "item": "Adoption Fee",
-          "amount": 0.0,
-          "unit": "varies by animal"
-        },
-        {
-          "item": "Spay/Neuter Program",
-          "amount": 0.0,
-          "unit": "varies"
-        }
-      ]
-    },
-    {
-      "name": "Sheriff / Law Enforcement",
-      "description": "Fingerprinting, court-related fees, and law enforcement services",
-      "fees": [
-        {
-          "item": "Fingerprinting",
-          "amount": 10.0,
-          "unit": "set"
+          "item": "Delinquent Fee",
+          "amount": 25,
+          "unit": "occurrence"
         }
       ]
     }

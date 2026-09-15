@@ -115,29 +115,6 @@ export interface BudgetData {
   expenditureTotals: Record<string, ExpenditureTotals>;
 }
 
-export interface CIPProject {
-  id: number;
-  category: string;
-  fundingSource: string;
-  department: string;
-  name: string;
-  FY27: number;
-  FY28: number;
-  FY29: number;
-  FY30: number;
-  FY31: number;
-  total: number;
-}
-
-export interface CIPData {
-  capitalProjects: CIPProject[];
-  capitalProjectTotals: Record<string, number>;
-  vehicles: CIPProject[];
-  vehicleTotals: Record<string, number>;
-  fundingSourceKey: Record<string, string>;
-  categoryKey: Record<string, string>;
-}
-
 export interface Fee {
   item: string;
   amount: number;
@@ -163,25 +140,4 @@ export interface FeesData {
   adoptionDate: string;
   keyChange: string;
   categories: FeeCategory[];
-}
-
-export interface DebtScheduleEntry {
-  year: string;
-  principalBalance: number;
-  principalPayment: number;
-  interestPayment: number;
-}
-
-export interface Loan {
-  lender: string;
-  originalAmount: number;
-  rate: number;
-  purpose: string;
-  schedule: DebtScheduleEntry[];
-}
-
-export interface DebtData {
-  loans: Loan[];
-  totalDebtService: Record<string, { principal: number; interest: number; total: number }>;
-  totalOutstandingDebt: number;
 }

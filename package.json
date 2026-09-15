@@ -1,7 +1,7 @@
 {
-  "name": "chatham-county-budget",
+  "name": "siler-city-budget",
   "version": "1.0.0",
-  "description": "Interactive budget explorer for Chatham County, NC",
+  "description": "Interactive budget explorer for Siler City, NC",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",

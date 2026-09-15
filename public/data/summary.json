@@ -1,44 +1,42 @@
 {
   "fiscalYears": {
     "FY25-26": {
-      "totalRevenue": 212802940,
-      "totalExpenditures": 212802940,
-      "taxRate": 0.6,
-      "valueOfPenny": 2253000,
-      "collectionRate": 0.985,
-      "fundBalanceAppropriated": 4892893
+      "totalRevenue": 13903098,
+      "totalExpenditures": 13903098,
+      "taxRate": 0.54,
+      "valueOfPenny": 139899,
+      "collectionRate": 1.0,
+      "fundBalanceAppropriated": 283855,
+      "status": "adopted"
     },
     "FY26-27": {
-      "totalRevenue": 222387963,
-      "totalExpenditures": 222387963,
-      "taxRate": 0.6,
-      "valueOfPenny": 2325634,
-      "collectionRate": 0.985,
-      "fundBalanceAppropriated": 7474362,
+      "totalRevenue": 15036518,
+      "totalExpenditures": 15036518,
+      "taxRate": 0.54,
+      "valueOfPenny": 139899,
+      "collectionRate": 1.0,
+      "fundBalanceAppropriated": 827294,
       "status": "adopted",
       "statusLabel": "Adopted Budget",
-      "statusDetail": "The Board of Commissioners approved the FY2026-2027 budget on June 15, 2026. This explorer focuses on the $222.4M General Fund within the County's $303.2M all-funds budget.",
+      "statusDetail": "The Board of Commissioners unanimously approved the FY2026-2027 budget on May 18, 2026. This explorer focuses on the $15.0M General Fund within the Town's $33.3M all-funds budget.",
       "highlights": [
-        "Adopted General Fund budget of $222.4M, a 4.5% increase over FY25-26",
-        "The County's adopted all-funds budget totals $303.2M",
-        "Property tax rate remains at $0.60 per $100 assessed value",
-        "Total property valuation: $23.44 billion; one penny generates $2,325,634",
-        "Chatham County Schools: $71.2M (largest single allocation, 32% of budget)",
-        "Sheriff's Office: $18.8M (+7.8%), Detention Center: $7.4M (+3.5%)",
-        "717.41 FTEs (+6.5 new positions, 0.9% increase)",
-        "Solid Waste & Recycling Enterprise Fund: $6.0M (separate fund)",
-        "Capital transfers: $27.5M for CIP and debt reserve",
-        "Fund balance appropriation of $7.5M (3.4% of budget)"
+        "Adopted General Fund budget of $15.0M, an 8.2% increase over FY25-26",
+        "The Town's adopted all-funds budget totals $33.3M across five funds",
+        "Property tax rate remains at $0.54 per $100 assessed value",
+        "Police is the largest operating department at $3.29M",
+        "Non-departmental appropriations total $4.54M",
+        "Water and Sewer Fund totals $17.59M during the Tri-River Water transition",
+        "General Fund uses $827,294 of appropriated fund balance"
       ],
       "timeline": [
         {
-          "date": "2026-05-01",
-          "event": "Manager's Recommended Budget presented",
+          "date": "2026-05-04",
+          "event": "Manager's recommended budget presented",
           "status": "complete"
         },
         {
-          "date": "2026-06-15",
-          "event": "Budget adopted by Board of Commissioners",
+          "date": "2026-05-18",
+          "event": "Public hearing and unanimous budget adoption",
           "status": "complete"
         },
         {

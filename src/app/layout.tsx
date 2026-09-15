@@ -3,9 +3,9 @@ import Nav from '@/components/Nav';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Chatham County, NC Budget',
+  title: 'Siler City, NC Budget',
   description:
-    'Explore the Chatham County budget by department, revenue source, and line item. Compare years, see your property tax receipt, and browse the capital improvement plan.',
+    'Explore the Siler City budget by department and revenue source, compare years, review fees, and estimate your Town property tax receipt.',
 };
 
 export default function RootLayout({
@@ -20,18 +20,18 @@ export default function RootLayout({
         <main className="max-w-7xl mx-auto px-4 py-8">{children}</main>
         <footer className="border-t mt-12 py-6 text-center text-sm text-gray-500">
           <p>
-            An independent civic data tool. Not an official Chatham County
+            An independent civic data tool. Not an official Town of Siler City
             publication.
           </p>
           <p className="mt-1">
             Data from published budget documents &middot;{' '}
             <a
-              href="https://www.chathamcountync.gov"
+              href="https://www.silercity.gov"
               className="underline hover:text-gray-700"
               target="_blank"
               rel="noopener noreferrer"
             >
-              chathamcountync.gov
+              silercity.gov
             </a>
           </p>
         </footer>

@@ -25,12 +25,7 @@ export default function DeptDetail({ dept, fiscalYears, onClose }: DeptDetailPro
     return formatPercent(((cur - prv) / prv) * 100);
   }
 
-  const breakdownRows = [
-    { label: 'Personnel', key: 'personnel' as const },
-    { label: 'Operating', key: 'operating' as const },
-    { label: 'Capital', key: 'capital' as const },
-    { label: 'Total', key: 'total' as const },
-  ];
+  const breakdownRows = [{ label: 'Adopted Department Total', key: 'total' as const }];
 
   return (
     <div className="bg-white rounded-xl shadow-sm border p-6">
@@ -81,49 +76,6 @@ export default function DeptDetail({ dept, fiscalYears, onClose }: DeptDetailPro
         </tbody>
       </table>
 
-      {/* Mini bar showing composition */}
-      <div className="mt-4">
-        <p className="text-xs text-gray-400 mb-1 font-medium">
-          {currentFY} Composition
-        </p>
-        <div className="flex h-4 rounded overflow-hidden">
-          {current.personnel > 0 && (
-            <div
-              className="bg-chatham-blue"
-              style={{ width: `${(current.personnel / current.total) * 100}%` }}
-              title={`Personnel: ${formatCurrency(current.personnel)}`}
-            />
-          )}
-          {current.operating > 0 && (
-            <div
-              className="bg-chatham-gold"
-              style={{ width: `${(current.operating / current.total) * 100}%` }}
-              title={`Operating: ${formatCurrency(current.operating)}`}
-            />
-          )}
-          {current.capital > 0 && (
-            <div
-              className="bg-gray-400"
-              style={{ width: `${(current.capital / current.total) * 100}%` }}
-              title={`Capital: ${formatCurrency(current.capital)}`}
-            />
-          )}
-        </div>
-        <div className="flex gap-4 mt-1 text-xs text-gray-500">
-          <span className="flex items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-chatham-blue inline-block" />
-            Personnel
-          </span>
-          <span className="flex items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-chatham-gold inline-block" />
-            Operating
-          </span>
-          <span className="flex items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-gray-400 inline-block" />
-            Capital
-          </span>
-        </div>
-      </div>
     </div>
   );
 }

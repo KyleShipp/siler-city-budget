@@ -1,8 +1,8 @@
-# Chatham County, NC Budget Explorer
+# Siler City, NC Budget Explorer
 
-Interactive budget transparency tool for Chatham County, North Carolina. Turns published budget documents into searchable tables, interactive charts, department drilldowns, year-over-year comparisons, and a property tax receipt view.
+Interactive budget transparency tool for Siler City, North Carolina. Turns the adopted budget into searchable tables, interactive charts, department comparisons, a fund overview, selected fees, and a property tax receipt estimate.
 
-**Live:** https://kyleshipp.github.io/chatham-nc-budget/
+**Live:** https://kyleshipp.github.io/siler-city-budget/
 
 ## Features
 
@@ -10,9 +10,9 @@ Interactive budget transparency tool for Chatham County, North Carolina. Turns p
 |------|-------------|
 | **Overview** | Dashboard with total budget, per-capita spending, revenue/department breakdown, and budget highlights |
 | **Compare Years** | Side-by-side spending and revenue comparison across fiscal years with $ and % changes |
-| **Your Receipt** | Look up your property via Chatham County GIS and see how your tax bill breaks down across county services |
-| **Capital Plan** | 5-year CIP with filterable project and vehicle tables |
-| **Fee Schedule** | Searchable categorized fee list |
+| **Your Receipt** | Look up your property via Chatham County GIS and estimate the Siler City portion of your tax bill |
+| **Fund Overview** | Review all five annually budgeted funds |
+| **Fee Schedule** | Searchable highlights from the adopted fee schedule |
 | **About** | Methodology, data sources, and limitations |
 
 ## Data Coverage
@@ -22,10 +22,10 @@ Interactive budget transparency tool for Chatham County, North Carolina. Turns p
 | FY 2025-2026 | Adopted |
 | FY 2026-2027 | Adopted |
 
-The explorer focuses on the General Fund. FY 2026-2027 figures are from the
-[approved budget](https://county-chatham-nc-cleardoc.cleargov.com/26276),
-adopted by the Board of Commissioners on June 15, 2026. The adopted General
-Fund totals $222.4 million; the County's all-funds budget totals $303.2 million.
+The explorer's detailed views focus on the General Fund. FY 2026-2027 figures
+are from the [adopted budget](https://www.silercity.gov/ArchiveCenter/ViewFile/Item/71),
+unanimously approved by the Board of Commissioners on May 18, 2026. The
+General Fund totals $15.0 million; the all-funds budget totals $33.3 million.
 
 ## Tech Stack
 
@@ -33,7 +33,7 @@ Fund totals $222.4 million; the County's all-funds budget totals $303.2 million.
 - **React 18** + **TypeScript**
 - **Recharts** for charts
 - **Tailwind CSS** for styling
-- **Chatham County GIS** for parcel lookups
+- **Chatham County GIS** for parcel lookups and Siler City tax-district identification
 
 ## Running Locally
 
@@ -50,17 +50,15 @@ npm run build   # Static export to /out
    - `meta.json` — municipality info, tax rates, fiscal year definitions
    - `summary.json` — high-level FY summaries
    - `budget.json` — revenue line items and department expenditures
-   - `cip.json` — capital improvement plan projects
-   - `fees.json` — fee schedule
-   - `debt.json` — debt service schedule
+   - `fees.json` — selected fee schedule highlights
 3. Run `npm run build`
 4. Push to `main` — GitHub Actions deploys automatically
 
 ## Deployment
 
 Deploys to GitHub Pages via `.github/workflows/deploy.yml` on push to `main`.
-Production basePath: `/chatham-nc-budget`.
+Production basePath: `/siler-city-budget`.
 
 ## Disclaimer
 
-This is an independent civic data tool, not an official Chatham County publication. Data is sourced from publicly available budget documents. For official information, visit [chathamcountync.gov](https://www.chathamcountync.gov).
+This is an independent civic data tool, not an official Town of Siler City publication. Data is sourced from publicly available budget documents. For official information, visit [silercity.gov](https://www.silercity.gov).
