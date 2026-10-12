@@ -139,6 +139,23 @@ def build_summary(parcels: list[dict]) -> dict:
             "Chatham County CAMA Parcels, 2027 assessment roll, "
             "SILER CITY CITY municipal tax district"
         ),
+        "historySource": (
+            "NC Department of Revenue LG55 municipal taxable valuation reports "
+            "(FY22-23 through FY25-26); Town of Siler City FY26-27 adopted budget. "
+            "Penny values are total taxable property divided by 10,000."
+        ),
+        "history": [
+            {"fiscalYear": "FY22-23", "taxablePropertyValue": 632623626,
+             "pennyValue": 63262, "revaluation": False},
+            {"fiscalYear": "FY23-24", "taxablePropertyValue": 648123609,
+             "pennyValue": 64812, "revaluation": False},
+            {"fiscalYear": "FY24-25", "taxablePropertyValue": 806232765,
+             "pennyValue": 80623, "revaluation": False},
+            {"fiscalYear": "FY25-26", "taxablePropertyValue": 1388169314,
+             "pennyValue": 138817, "revaluation": True},
+            {"fiscalYear": "FY26-27", "taxablePropertyValue": 1398990000,
+             "pennyValue": 139899, "revaluation": False},
+        ],
         "groups": groups,
         "total": {
             "group": "TOTAL",
