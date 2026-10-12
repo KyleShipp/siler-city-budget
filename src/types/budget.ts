@@ -125,6 +125,13 @@ export interface TaxBaseGroup {
   totalTax: number;
 }
 
+export interface TaxBaseHistoryPoint {
+  fiscalYear: string;
+  taxablePropertyValue: number;
+  pennyValue: number;
+  revaluation: boolean;
+}
+
 export interface TaxBaseData {
   fiscalYear: string;
   assessmentYear: number;
@@ -132,6 +139,8 @@ export interface TaxBaseData {
   townRate: number;
   countyRate: number;
   source: string;
+  historySource: string;
+  history: TaxBaseHistoryPoint[];
   groups: TaxBaseGroup[];
   total: TaxBaseGroup;
 }
